@@ -9,7 +9,6 @@ import { WinesComponent } from './wines/wines.component';
 import { WineDetailComponent } from './wine-detail/wine-detail.component';
 import { WineService } from './wine.service';
 import { MessageService } from './message.service';
-import { MessagesComponent } from './messages/messages.component';
 import { AppRoutingModule } from './/app-routing.module';
 
 
@@ -19,7 +18,6 @@ import { AppRoutingModule } from './/app-routing.module';
     DashboardComponent,
     WinesComponent,
     WineDetailComponent,
-    MessagesComponent
   ],
   imports: [
     BrowserModule,
