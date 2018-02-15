@@ -1,16 +1,3 @@
-# Welcome to Serverless!
-#
-# This file is the main config file for your service.
-# It's very minimal at this point and uses default values.
-# You can always add more config options for more control.
-# We've included some commented out config examples here.
-# Just uncomment any of them to get that config option.
-#
-# For full config options, check the docs:
-#    docs.serverless.com
-#
-# Happy Coding!
-
 service: MaddiesWineCellar
 
 # You can pin your service to only deploy with a specific Serverless version
@@ -93,6 +80,121 @@ functions:
         - node_modules/xmlbuilder/**
         - node_modules/buffer/**
 
+  getWine:
+    handler: GetWine/handler.GetWine
+    description: service to get a specific wine from cellar
+    events:
+      - http:
+          path: wine
+          method: get
+
+    package:
+      include:
+        - GetWine/handler.js
+        - Shared/Models/wineModel.js
+        - node_modules/aws-sdk/**
+        - node_modules/buffer/**
+        - node_modules/base64-js/**
+        - node_modules/ieee754/**
+        - node_modules/isarray/**
+        - node_modules/crypto-browserify/**
+        - node_modules/jmespath/**
+        - node_modules/querystring/**
+        - node_modules/sax/**
+        - node_modules/url/**
+        - node_modules/punycode/**
+        - node_modules/uuid/**
+        - node_modules/xml2js/**
+        - node_modules/lodash/**
+        - node_modules/xmlbuilder/**
+        - node_modules/buffer/**
+
+  deleteWine:
+    handler: DeleteWine/handler.DeleteWine
+    description: service to delete wines from cellar
+    events:
+      - http:
+          path: wine
+          method: delete
+
+    package:
+      include:
+        - DeleteWine/handler.js
+        - Shared/Models/wineModel.js
+        - node_modules/aws-sdk/**
+        - node_modules/buffer/**
+        - node_modules/base64-js/**
+        - node_modules/ieee754/**
+        - node_modules/isarray/**
+        - node_modules/crypto-browserify/**
+        - node_modules/jmespath/**
+        - node_modules/querystring/**
+        - node_modules/sax/**
+        - node_modules/url/**
+        - node_modules/punycode/**
+        - node_modules/uuid/**
+        - node_modules/xml2js/**
+        - node_modules/lodash/**
+        - node_modules/xmlbuilder/**
+        - node_modules/buffer/**
+
+  updateWine:
+    handler: UpdateWine/handler.UpdateWine
+    description: service to get wines from cellar
+    events:
+      - http:
+          path: wine
+          method: put
+
+    package:
+      include:
+        - UpdateWine/handler.js
+        - Shared/Models/wineModel.js
+        - node_modules/aws-sdk/**
+        - node_modules/buffer/**
+        - node_modules/base64-js/**
+        - node_modules/ieee754/**
+        - node_modules/isarray/**
+        - node_modules/crypto-browserify/**
+        - node_modules/jmespath/**
+        - node_modules/querystring/**
+        - node_modules/sax/**
+        - node_modules/url/**
+        - node_modules/punycode/**
+        - node_modules/uuid/**
+        - node_modules/xml2js/**
+        - node_modules/lodash/**
+        - node_modules/xmlbuilder/**
+        - node_modules/buffer/**
+
+  addWine:
+    handler: AddWine/handler.AddWine
+    description: service to get wines from cellar
+    events:
+      - http:
+          path: wine
+          method: post
+
+    package:
+      include:
+        - AddWine/handler.js
+        - Shared/Models/wineModel.js
+        - node_modules/aws-sdk/**
+        - node_modules/buffer/**
+        - node_modules/base64-js/**
+        - node_modules/ieee754/**
+        - node_modules/isarray/**
+        - node_modules/crypto-browserify/**
+        - node_modules/jmespath/**
+        - node_modules/querystring/**
+        - node_modules/sax/**
+        - node_modules/url/**
+        - node_modules/punycode/**
+        - node_modules/uuid/**
+        - node_modules/xml2js/**
+        - node_modules/lodash/**
+        - node_modules/xmlbuilder/**
+        - node_modules/buffer/**
 #    The following are a few example events you can configure
 #    NOTE: Please make sure to change your handler code to work with those events
 #    Check the event documentation for details
