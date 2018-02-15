@@ -1,8 +1,21 @@
-<h2>Wines in my cellar</h2>
+<h2>Wines in my Cellar</h2>
+
+<div>
+  <label>Wine name:
+    <input #wineName />
+  </label>
+  <!-- (click) passes input value to add() and then clears the input -->
+  <button (click)="add(wineName.value); wineName.value=''">
+    add
+  </button>
+</div>
+
 <ul class="wines">
   <li *ngFor="let wine of wines">
     <a routerLink="/detail/{{wine.id}}">
       <span class="badge">{{wine.id}}</span> {{wine.name}}
     </a>
+    <button class="delete" title="delete wine"
+    (click)="delete(wine)">x</button>
   </li>
 </ul>

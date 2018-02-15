@@ -1,7 +1,9 @@
-import { Wine } from './wine';
+import { InMemoryDbService } from 'angular-in-memory-web-api';
 
-export const WINES: Wine[] = [
-    {
+export class InMemoryDataService implements InMemoryDbService {
+  createDb() {
+    const wines = [
+          {
     id: 1,
     name: 'Maison Bleue',
     vineyard: 'Maison Bleue',
@@ -17,4 +19,7 @@ export const WINES: Wine[] = [
     description: 'Presley Pinot Grigio Columbia Valley',
     grapes: 0
   }
-];
+    ];
+    return {wines};
+  }
+}

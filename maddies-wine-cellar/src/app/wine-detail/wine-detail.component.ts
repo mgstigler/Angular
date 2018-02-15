@@ -32,4 +32,9 @@ export class WineDetailComponent implements OnInit {
   goBack(): void {
     this.location.back();
   }
+
+  save(): void {
+    this.wineService.updateWine(this.wine)
+      .subscribe(() => this.goBack());
+  }
 }
