@@ -1,0 +1,16 @@
+<div *ngIf="wine">
+
+  <h2>{{ wine.name | uppercase }} Details</h2>
+  <div><span>id: </span>{{wine.id}}</div>
+  <div><span>name: </span>{{wine.name}}</div>
+  <div><span>vineyard: </span>{{wine.vineyard}}</div>
+  <div><span>vintage: </span>{{wine.vintage}}</div>
+  <div><span>description: </span>{{wine.description}}</div>
+  <div><span>grape rating: </span>{{wine.grapes}}</div>
+  <div>
+    <label>name:
+      <input [(ngModel)]="wine.name" placeholder="name">
+    </label>
+  </div>
+  <button (click)="goBack()">go back</button>
+</div>

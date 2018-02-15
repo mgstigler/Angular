@@ -1,0 +1,8 @@
+<h2>Wines in my cellar</h2>
+<ul class="wines">
+  <li *ngFor="let wine of wines">
+    <a routerLink="/detail/{{wine.id}}">
+      <span class="badge">{{wine.id}}</span> {{wine.name}}
+    </a>
+  </li>
+</ul>
